@@ -1,26 +1,62 @@
 REXWOLF.INFO STATIC WEBSITE
 
-Files:
-- index.html        Main NFC/social landing page
-- gallery.html      Image gallery with fullscreen viewer
-- styles.css        All visual styling
-- script.js         Discord copy button
-- gallery.js        Gallery/lightbox controls
-- assets/images/    Optimized WebP artwork
+MAIN FILES
+- index.html             NFC/social landing page
+- gallery.html           Gallery page and fullscreen viewer
+- styles.css             Site styling
+- script.js              Discord copy button
+- gallery.js             Gallery viewer behavior
+- gallery-data.js        Auto-generated gallery list; do not edit manually
+- gallery-source/        Put original gallery images here
+- gallery-info.json      Optional custom titles and captions
+- update-gallery.bat     Double-click this after adding images
+- build_gallery.py       Script used by update-gallery.bat
 
-DEPLOY TO CLOUDFLARE PAGES (direct upload):
-1. Sign in to Cloudflare.
-2. Go to Workers & Pages > Create > Pages > Upload assets.
-3. Upload this folder (or the included rexwolf-site.zip).
-4. After deployment, open Custom domains and add rexwolf.info.
-5. Cloudflare will configure HTTPS and the DNS records.
+HOW TO ADD GALLERY IMAGES
+1. Copy new JPG, PNG, WEBP, GIF, BMP, or TIFF files into gallery-source.
+   You may also create subfolders to organize your originals.
+2. Double-click update-gallery.bat.
+3. Wait until it says "Gallery updated."
+4. Open gallery.html to check the results.
+5. Upload the entire updated website folder to your server.
 
-EDITING LINKS:
-Open index.html in a text editor and replace the href URL and visible username in the matching social-card.
+The builder automatically:
+- Finds every supported image in gallery-source and its subfolders.
+- Corrects phone-camera rotation.
+- Creates lightweight WebP thumbnails.
+- Creates optimized full-size WebP images.
+- Rebuilds gallery-data.js.
+- Removes generated files for images that you deleted from gallery-source.
 
-ADDING GALLERY IMAGES:
-1. Add a thumbnail under assets/images/thumbs and a full image under assets/images/full.
-2. Copy a gallery-card block in gallery.html.
-3. Add the matching object to the images array in gallery.js.
+CUSTOM TITLES AND CAPTIONS
+Open gallery-info.json in a text editor. Each image can have a custom title and caption:
 
-Before programming the NFC tag, test https://rexwolf.info on multiple phones. Program the tag as a URL record using the full HTTPS address.
+"My Picture.png": {
+  "title": "My Picture",
+  "caption": "A short description."
+}
+
+The filename must exactly match the file in gallery-source. Files without an entry are automatically titled from their filename.
+
+FIRST-TIME REQUIREMENT
+The update script needs Python 3 and Pillow. If Pillow is missing, open Command Prompt in this folder and run:
+
+py -m pip install Pillow
+
+DEPLOYMENT
+Upload the contents of this folder to /var/www/rexwolf.info or deploy it through Cloudflare Pages. Keep gallery-source and the builder scripts in your local copy; they do not affect the public website, though uploading them is harmless.
+
+Before programming the NFC tag, test https://rexwolf.info on multiple phones. Write the full HTTPS URL as a URL/URI NFC record.
+
+Git:
+cd /var/www/rexwolf.info
+git status
+git add .
+git commit -m "Describe the update"
+git push
+
+permission commands:
+find /var/www/rexwolf.info -type d -exec chmod 755 {} \;
+find /var/www/rexwolf.info -type f -exec chmod 644 {} \;
+chmod 775 /var/www
+
