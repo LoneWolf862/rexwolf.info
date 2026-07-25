@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f28c00" />
+  <meta name="description" content="Rex Wolf's image gallery." />
+  <title>Rex Wolf • Gallery</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="gallery-page">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="gallery-shell">
+    <header class="gallery-header">
+      <a class="back-link" href="index.html">← Home</a>
+      <div class="gallery-title-row">
+        <img src="assets/images/thumbs/rex-portrait.webp" alt="Rex Wolf" />
+        <div><h1>Rex’s Gallery</h1><p>Click any image to open the full viewer.</p></div>
+      </div>
+    </header>
+
+    <section class="gallery-grid" aria-label="Image gallery">
+      <button class="gallery-card" data-index="0"><img src="assets/images/thumbs/rubik-wolf.webp" alt="Rex sitting with a Rubik's cube" loading="lazy"><span><strong>Cube Break</strong><small>Rex with a Rubik’s cube</small></span></button>
+      <button class="gallery-card" data-index="1"><img src="assets/images/thumbs/rex-portrait.webp" alt="Portrait of Rex wearing glasses" loading="lazy"><span><strong>Portrait</strong><small>Glasses and a little confidence</small></span></button>
+      <button class="gallery-card" data-index="2"><img src="assets/images/thumbs/music-wolf.webp" alt="Rex wearing headphones" loading="lazy"><span><strong>Lost in the Music</strong><small>Headphones on, world off</small></span></button>
+      <button class="gallery-card" data-index="3"><img src="assets/images/thumbs/arcade-wolf.webp" alt="Rex playing an arcade cabinet with a guitar" loading="lazy"><span><strong>Arcade Night</strong><small>Retro games and bass guitar</small></span></button>
+    </section>
+  </main>
+
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-panel">
+      <header class="lightbox-head"><div><h2 id="lightbox-title"></h2><p id="lightbox-caption"></p></div><div class="lightbox-actions"><a id="download-link" class="download-btn" download>Download</a><button class="close-btn" aria-label="Close image viewer">×</button></div></header>
+      <div class="lightbox-stage"><button class="nav-btn prev" aria-label="Previous image">‹</button><img id="lightbox-image" alt=""><button class="nav-btn next" aria-label="Next image">›</button></div>
+      <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
