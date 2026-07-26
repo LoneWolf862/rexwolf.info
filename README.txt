@@ -20,6 +20,8 @@ HOW TO ADD GALLERY IMAGES
 4. Open gallery.html to check the results.
 5. Upload the entire updated website folder to your server.
 
+scp -r "C:\Users\Rex\OneDrive\Pictures\0. Fluffy\0. Kaito\site\." wolf@10.80.67.215:/var/www/rexwolf.info/gallery-source/
+
 The builder automatically:
 - Finds every supported image in gallery-source and its subfolders.
 - Corrects phone-camera rotation.

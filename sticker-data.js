@@ -881,6 +881,17 @@ window.STICKER_IMAGES = [
     "height": 512
   },
   {
+    "title": "Snuggle",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/snuggle.webp",
+    "src": "assets/images/full/stickers/snuggle.webp",
+    "download": "sticker-source/snuggle.webp",
+    "downloadName": "snuggle.webp",
+    "width": 512,
+    "height": 512
+  },
+  {
     "title": "Sorry",
     "caption": "",
     "category": "Sticker",
@@ -888,17 +899,6 @@ window.STICKER_IMAGES = [
     "src": "assets/images/full/stickers/sorry.webp",
     "download": "sticker-source/Sorry.png",
     "downloadName": "Sorry.png",
-    "width": 512,
-    "height": 512
-  },
-  {
-    "title": "Stickhgter",
-    "caption": "",
-    "category": "Sticker",
-    "thumb": "assets/images/thumbs/stickers/stickhgter.webp",
-    "src": "assets/images/full/stickers/stickhgter.webp",
-    "download": "sticker-source/stickhgter.webp",
-    "downloadName": "stickhgter.webp",
     "width": 512,
     "height": 512
   },
@@ -976,6 +976,17 @@ window.STICKER_IMAGES = [
     "src": "assets/images/full/stickers/walkies.webp",
     "download": "sticker-source/Walkies.png",
     "downloadName": "Walkies.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Wheeze",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/wheeze.webp",
+    "src": "assets/images/full/stickers/wheeze.webp",
+    "download": "sticker-source/Wheeze.PNG",
+    "downloadName": "Wheeze.PNG",
     "width": 512,
     "height": 512
   },
