@@ -2,7 +2,7 @@
 window.GALLERY_IMAGES = [
   {
     "title": "Main Reference Sheet",
-    "caption": "Rex’s main character reference sheet.",
+    "caption": "My main / current reference sheet.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/000-wolf-main-refsheet.webp",
     "src": "assets/images/full/gallery/000-wolf-main-refsheet.webp",
@@ -12,7 +12,7 @@ window.GALLERY_IMAGES = [
   },
   {
     "title": "Original Reference Sheet",
-    "caption": "An earlier Rex character reference sheet.",
+    "caption": "An earlier character reference sheet.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/001-old-wolfrefsheet.webp",
     "src": "assets/images/full/gallery/001-old-wolfrefsheet.webp",
@@ -61,8 +61,8 @@ window.GALLERY_IMAGES = [
     "height": 2048
   },
   {
-    "title": "Halo Portrait",
-    "caption": "",
+    "title": "Grin",
+    "caption": "Art by Hal0.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/006-halo-portrait.webp",
     "src": "assets/images/full/gallery/006-halo-portrait.webp",
@@ -181,8 +181,8 @@ window.GALLERY_IMAGES = [
     "height": 1450
   },
   {
-    "title": "Petting",
-    "caption": "",
+    "title": "Pets",
+    "caption": "Art by Titan Animation.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/018-petting.webp",
     "src": "assets/images/full/gallery/018-petting.webp",
@@ -191,8 +191,8 @@ window.GALLERY_IMAGES = [
     "height": 512
   },
   {
-    "title": "Yoink Gift",
-    "caption": "",
+    "title": "Commission Gift",
+    "caption": "Commissioned by Tracker.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/019-yoink-gift.webp",
     "src": "assets/images/full/gallery/019-yoink-gift.webp",

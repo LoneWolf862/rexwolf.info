@@ -1,22 +1,316 @@
-.sticker-page{width:min(1500px,calc(100% - 32px));margin:auto;padding:34px 0 64px}
-.sticker-hero{text-align:center;padding:24px 16px 38px}.back-link{display:inline-block;margin-bottom:24px;color:inherit;opacity:.78;text-decoration:none}
-.eyebrow{margin:0 0 8px;color:#f28a2e;font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
-.sticker-hero h1{margin:0;font-size:clamp(2.5rem,7vw,5.5rem);line-height:.95}.sticker-intro{max-width:720px;margin:20px auto 0;font-size:1.05rem;line-height:1.7;opacity:.82}
-.sticker-pack-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:28px}
-.pack-button,.lightbox-download{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border:1px solid #ffffff26;border-radius:999px;color:#fff;font-weight:800;text-decoration:none;transition:.18s}
-.pack-button:hover,.lightbox-download:hover{transform:translateY(-2px);filter:brightness(1.08)}.telegram{background:#229ed9}.apple{background:linear-gradient(135deg,#2e3137,#111317)}
-.sticker-section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:20px}.sticker-section-heading h2{margin:0;font-size:clamp(1.8rem,4vw,3rem)}
-.sticker-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
-.sticker-card{position:relative;overflow:hidden;aspect-ratio:1;padding:0;border:1px solid #ffffff1c;border-radius:18px;background-color:#191b1fb8;background-image:linear-gradient(45deg,#ffffff0a 25%,transparent 25%),linear-gradient(-45deg,#ffffff0a 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#ffffff0a 75%),linear-gradient(-45deg,transparent 75%,#ffffff0a 75%);background-position:0 0,0 9px,9px -9px,-9px 0;background-size:18px 18px;cursor:pointer}
-.sticker-card img{width:100%;height:100%;padding:7%;object-fit:contain;transition:transform .2s}.sticker-card:hover img{transform:scale(1.055)}
-.sticker-card-title{position:absolute;right:8px;bottom:8px;left:8px;overflow:hidden;padding:6px 8px;border-radius:10px;background:#08090bc2;color:#fff;font-size:.73rem;font-weight:700;text-overflow:ellipsis;white-space:nowrap;opacity:0;transform:translateY(4px);transition:.18s}
-.sticker-card:hover .sticker-card-title,.sticker-card:focus-visible .sticker-card-title{opacity:1;transform:none}
-.sticker-lightbox[hidden]{display:none}.sticker-lightbox{position:fixed;z-index:1000;inset:0;display:grid;grid-template-columns:70px minmax(0,1fr) 70px;align-items:center;padding:30px;background:#040507f0;backdrop-filter:blur(12px)}
-.lightbox-figure{width:min(820px,100%);margin:auto;text-align:center}.lightbox-image-stage{display:grid;place-items:center;min-height:min(66vh,700px);border-radius:24px;background-color:#181a1e}
-.lightbox-image-stage img{max-width:min(70vh,720px);max-height:66vh;object-fit:contain}.lightbox-figure h2{margin:18px 0 4px}.lightbox-figure p{min-height:1.4em;margin:0 0 16px;opacity:.72}.lightbox-download{background:#d96c20}
-.lightbox-close,.lightbox-nav{border:0;color:#fff;background:transparent;cursor:pointer}.lightbox-close{position:absolute;top:18px;right:22px;font-size:2.4rem}.lightbox-nav{font-size:4rem;opacity:.75}.lightbox-nav:hover,.lightbox-close:hover{opacity:1}
-body.sticker-lightbox-open{overflow:hidden}
-@media(max-width:1150px){.sticker-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
-@media(max-width:900px){.sticker-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:680px){.sticker-page{width:min(100% - 20px,1500px)}.sticker-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.sticker-lightbox{grid-template-columns:44px minmax(0,1fr) 44px;padding:18px 4px}.lightbox-nav{font-size:3rem}}
-@media(max-width:430px){.sticker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sticker-section-heading{align-items:start;flex-direction:column;gap:3px}}
+.sticker-page {
+  width: min(1500px, calc(100% - 32px));
+  margin: auto;
+  padding: 34px 0 64px;
+}
+
+.sticker-hero {
+  position: relative;
+  text-align: center;
+  padding: 24px 16px 38px;
+}
+
+.back-link {
+  display: block;
+  width: fit-content;
+  margin: 0 0 24px;
+  color: inherit;
+  opacity: 0.78;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.back-link:hover {
+  opacity: 1;
+  color: #f28a2e;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #f28a2e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.sticker-hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 0.95;
+}
+
+.sticker-intro {
+  max-width: 720px;
+  margin: 20px auto 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.82;
+}
+
+.sticker-pack-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.pack-button,
+.lightbox-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid #ffffff26;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease;
+}
+
+.pack-button:hover,
+.lightbox-download:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.pack-button.telegram {
+  background: #229ed9;
+}
+
+.pack-button.apple {
+  background: linear-gradient(135deg, #2e3137, #111317);
+}
+
+.sticker-gallery-section {
+  padding-top: 20px;
+}
+
+.sticker-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.sticker-section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.sticker-count {
+  margin: 0 0 5px;
+  opacity: 0.68;
+}
+
+.sticker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.sticker-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid #ffffff1c;
+  border-radius: 18px;
+  background-color: #191b1fb8;
+  background-image:
+    linear-gradient(45deg, #ffffff0a 25%, transparent 25%),
+    linear-gradient(-45deg, #ffffff0a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ffffff0a 75%),
+    linear-gradient(-45deg, transparent 75%, #ffffff0a 75%);
+  background-position:
+    0 0,
+    0 9px,
+    9px -9px,
+    -9px 0;
+  background-size: 18px 18px;
+  cursor: pointer;
+}
+
+.sticker-card img {
+  width: 100%;
+  height: 100%;
+  padding: 7%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.sticker-card:hover img {
+  transform: scale(1.055);
+}
+
+.sticker-card-title {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  overflow: hidden;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: #08090bc2;
+  color: #fff;
+  font-size: 0.73rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.sticker-card:hover .sticker-card-title,
+.sticker-card:focus-visible .sticker-card-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sticker-lightbox[hidden] {
+  display: none;
+}
+
+.sticker-lightbox {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) 70px;
+  align-items: center;
+  padding: 30px;
+  background: #040507f0;
+  backdrop-filter: blur(12px);
+}
+
+.lightbox-figure {
+  width: min(820px, 100%);
+  margin: auto;
+  text-align: center;
+}
+
+.lightbox-image-stage {
+  display: grid;
+  place-items: center;
+  min-height: min(66vh, 700px);
+  border-radius: 24px;
+  background-color: #181a1e;
+  background-image:
+    linear-gradient(45deg, #ffffff0a 25%, transparent 25%),
+    linear-gradient(-45deg, #ffffff0a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ffffff0a 75%),
+    linear-gradient(-45deg, transparent 75%, #ffffff0a 75%);
+  background-position:
+    0 0,
+    0 14px,
+    14px -14px,
+    -14px 0;
+  background-size: 28px 28px;
+}
+
+.lightbox-image-stage img {
+  max-width: min(70vh, 720px);
+  max-height: 66vh;
+  object-fit: contain;
+}
+
+.lightbox-figure h2 {
+  margin: 18px 0 4px;
+}
+
+.lightbox-figure p {
+  min-height: 1.4em;
+  margin: 0 0 16px;
+  opacity: 0.72;
+}
+
+.lightbox-download {
+  background: #d96c20;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  border: 0;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 2.4rem;
+}
+
+.lightbox-nav {
+  font-size: 4rem;
+  opacity: 0.75;
+}
+
+.lightbox-nav:hover,
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+body.sticker-lightbox-open {
+  overflow: hidden;
+}
+
+@media (max-width: 1150px) {
+  .sticker-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .sticker-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .sticker-page {
+    width: min(100% - 20px, 1500px);
+  }
+
+  .sticker-hero {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  .sticker-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .sticker-lightbox {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    padding: 18px 4px;
+  }
+
+  .lightbox-nav {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .sticker-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sticker-section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 3px;
+  }
+}
