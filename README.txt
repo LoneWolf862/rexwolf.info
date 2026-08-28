@@ -14,13 +14,16 @@ MAIN FILES
 
 HOW TO ADD GALLERY IMAGES
 1. Copy new JPG, PNG, WEBP, GIF, BMP, or TIFF files into gallery-source.
-   You may also create subfolders to organize your originals.
-2. Double-click update-gallery.bat.
-3. Wait until it says "Gallery updated."
-4. Open gallery.html to check the results.
-5. Upload the entire updated website folder to your server.
+   can create subfolders to organize your originals.
+2. Edit Image Data  
+3. Exicute Galary Biulder
+4. Wait until it says "Gallery updated."
+5. Open gallery.html to check the results.
 
 scp -r "C:\Users\Rex\OneDrive\Pictures\0. Fluffy\0. Kaito\site\." wolf@10.80.67.215:/var/www/rexwolf.info/gallery-source/
+nano gallery-info.json
+python3 build_gallery.py
+
 
 The builder automatically:
 - Finds every supported image in gallery-source and its subfolders.

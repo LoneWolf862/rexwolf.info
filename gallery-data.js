@@ -199,5 +199,25 @@ window.GALLERY_IMAGES = [
     "downloadName": "019.yoink_gift.png",
     "width": 1000,
     "height": 1000
+  },
+  {
+    "title": "Long Hours",
+    "caption": "Art by Sumrek.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/020-long-hours.webp",
+    "src": "assets/images/full/gallery/020-long-hours.webp",
+    "downloadName": "020.long_hours.png",
+    "width": 1320,
+    "height": 2200
+  },
+  {
+    "title": "Long Hours (unshaded)",
+    "caption": "Art by Sumrek.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/021-long-hours-unshaded.webp",
+    "src": "assets/images/full/gallery/021-long-hours-unshaded.webp",
+    "downloadName": "021.long_hours_unshaded.png",
+    "width": 1320,
+    "height": 2200
   }
 ];
