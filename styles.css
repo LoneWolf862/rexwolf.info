@@ -67,3 +67,26 @@ linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90de
     display: block;
     object-fit: cover;     /* fills the box */
 }
+
+/* Artist Reference */
+.artist-shell{width:min(calc(100% - 28px),1050px);margin:0 auto;padding:34px 0 60px;position:relative}
+.artist-header{margin-bottom:24px}
+.artist-actions{display:flex;justify-content:center;margin:28px 0 26px}
+.terms-btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 28px;border-radius:14px;background:linear-gradient(145deg,#f7a62d,#f28c00);color:#1b1d22;text-decoration:none;font-weight:900;font-size:1.05rem;border:1px solid rgba(255,255,255,.25);box-shadow:0 8px 0 #9d5b00,0 14px 28px rgba(0,0,0,.28);transition:transform .16s ease,box-shadow .16s ease}
+.terms-btn:hover,.terms-btn:focus-visible{transform:translateY(-3px);box-shadow:0 11px 0 #9d5b00,0 18px 32px rgba(0,0,0,.32);outline:none}
+.terms-btn:active{transform:translateY(3px);box-shadow:0 4px 0 #9d5b00}
+.refsheet-wrap{margin:0 0 34px;padding:12px;background:#292c32;border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 8px 0 #0c0d10}
+.refsheet-wrap img{display:block;width:100%;height:auto;border-radius:10px;background:#111}
+.artist-copy{max-width:860px;margin:0 auto;color:#e7e9ed;font-size:1rem;line-height:1.72}
+.artist-copy h2{margin:34px 0 12px;color:var(--paper);font-size:1.65rem;letter-spacing:-.025em}
+.artist-copy h2:first-child{margin-top:0}
+.artist-copy p{margin:0 0 17px}
+.artist-copy ul{margin:0 0 18px;padding-left:1.4rem}
+.artist-copy li{margin:7px 0}
+.artist-copy strong{color:var(--paper)}
+.artist-copy a{color:var(--orange2);font-weight:800}
+.artist-note{margin:24px 0;padding:18px 20px;background:linear-gradient(145deg,#3b3429,#272522);border:1px solid rgba(242,140,0,.45);border-left:5px solid var(--orange);border-radius:14px;box-shadow:0 7px 0 #0d0e11}
+.artist-note h2{margin:0 0 10px;font-size:1.25rem;color:var(--orange2)}
+.artist-note p:last-child,.artist-note ul:last-child{margin-bottom:0}
+.artist-shorthand{margin:24px 0;padding:14px 18px;text-align:center;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);border-radius:14px;font-weight:900;color:var(--paper)}
+@media(max-width:560px){.artist-shell{padding-top:24px}.artist-actions{margin-top:22px}.terms-btn{width:100%}.refsheet-wrap{padding:7px;margin-bottom:28px}.artist-copy{font-size:.96rem;line-height:1.66}.artist-copy h2{font-size:1.4rem}.artist-note{padding:16px}}

@@ -219,5 +219,25 @@ window.GALLERY_IMAGES = [
     "downloadName": "021.long_hours_unshaded.png",
     "width": 1320,
     "height": 2200
+  },
+  {
+    "title": "Woof",
+    "caption": "Art by Raven",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/022-woof.webp",
+    "src": "assets/images/full/gallery/022-woof.webp",
+    "downloadName": "022.Woof.png",
+    "width": 1139,
+    "height": 1301
+  },
+  {
+    "title": "Late night vibes ",
+    "caption": "Art by F3ath3rDraws.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/023-late-night-vibes.webp",
+    "src": "assets/images/full/gallery/023-late-night-vibes.webp",
+    "downloadName": "023.Late_night_vibes.png",
+    "width": 2200,
+    "height": 1862
   }
 ];
