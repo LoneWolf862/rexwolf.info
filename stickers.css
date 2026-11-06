@@ -282,22 +282,18 @@ body.sticker-lightbox-open {
   .sticker-page {
     width: min(100% - 20px, 1500px);
   }
-
   .sticker-hero {
     padding-right: 4px;
     padding-left: 4px;
   }
-
   .sticker-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 9px;
   }
-
   .sticker-lightbox {
     grid-template-columns: 44px minmax(0, 1fr) 44px;
     padding: 18px 4px;
   }
-
   .lightbox-nav {
     font-size: 3rem;
   }
@@ -307,7 +303,6 @@ body.sticker-lightbox-open {
   .sticker-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .sticker-section-heading {
     align-items: start;
     flex-direction: column;
@@ -316,5 +311,3 @@ body.sticker-lightbox-open {
 }
 
 /* Shared credits: Sticker page */
-.sticker-intro a { color: var(--orange2, #ffad32); font-weight: 800; text-underline-offset: 3px; }
-.sticker-intro a:hover { color: var(--paper, #fffaf2); }

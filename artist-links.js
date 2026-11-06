@@ -17,6 +17,7 @@
           return;
         }
         const link = document.createElement('a');
+        link.className = 'artist-link';
         link.href = artist.url;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
