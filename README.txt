@@ -1,23 +1,67 @@
-RexWolf creator credits extension — Sticker + Wolf in the Wild
+REXWOLF.INFO STATIC WEBSITE
 
-Requires that the previous artist credit update has been installed:
-  /var/www/rexwolf.info/artists.json
+MAIN FILES
+- index.html             NFC/social landing page
+- gallery.html           Gallery page and fullscreen viewer
+- styles.css             Site styling
+- script.js              Discord copy button
+- gallery.js             Gallery viewer behavior
+- gallery-data.js        Auto-generated gallery list; do not edit manually
+- gallery-source/        Put original gallery images here
+- gallery-info.json      Optional custom titles and captions
+- update-gallery.bat     Double-click this after adding images
+- build_gallery.py       Script used by update-gallery.bat
 
-Transfer artist-links.js and install_creator_credits.py into the website root.
-Run on Zeta from that root:
-  python3 install_creator_credits.py
+HOW TO ADD GALLERY IMAGES
+1. Copy new JPG, PNG, WEBP, GIF, BMP, or TIFF files into gallery-source.
+   can create subfolders to organize your originals.
+2. Edit Image Data  
+3. Exicute Galary Biulder
+4. Wait until it says "Gallery updated."
+5. Open gallery.html to check the results.
 
-This modifies ONLY stickers.html, fursuit.html, and stickers.css.
-It does not rebuild galleries or touch any images.
-It uses artists.json as the one directory of creator display names and URLs.
-The artist link script must remain in the website root and be committed.
+scp -r "C:\Users\Rex\OneDrive\Pictures\0. Fluffy\0. Kaito\site\." wolf@10.80.67.215:/var/www/rexwolf.info/gallery-source/
+nano gallery-info.json
+python3 build_gallery.py
 
-Verify https://rexwolf.info/stickers.html and https://rexwolf.info/fursuit.html
-then:
-  git diff --check
-  git diff -- stickers.html fursuit.html stickers.css
-  git add artist-links.js stickers.html fursuit.html stickers.css
-  git commit -m "Reuse artist directory in sticker and fursuit credits"
-  git push origin main
 
-The installer can be deleted after use. Backups are saved in your home directory outside the public website.
+The builder automatically:
+- Finds every supported image in gallery-source and its subfolders.
+- Corrects phone-camera rotation.
+- Creates lightweight WebP thumbnails.
+- Creates optimized full-size WebP images.
+- Rebuilds gallery-data.js.
+- Removes generated files for images that you deleted from gallery-source.
+
+CUSTOM TITLES AND CAPTIONS
+Open gallery-info.json in a text editor. Each image can have a custom title and caption:
+
+"My Picture.png": {
+  "title": "My Picture",
+  "caption": "A short description."
+}
+
+The filename must exactly match the file in gallery-source. Files without an entry are automatically titled from their filename.
+
+FIRST-TIME REQUIREMENT
+The update script needs Python 3 and Pillow. If Pillow is missing, open Command Prompt in this folder and run:
+
+py -m pip install Pillow
+
+DEPLOYMENT
+Upload the contents of this folder to /var/www/rexwolf.info or deploy it through Cloudflare Pages. Keep gallery-source and the builder scripts in your local copy; they do not affect the public website, though uploading them is harmless.
+
+Before programming the NFC tag, test https://rexwolf.info on multiple phones. Write the full HTTPS URL as a URL/URI NFC record.
+
+Git:
+cd /var/www/rexwolf.info
+git status
+git add .
+git commit -m "Describe the update"
+git push
+
+permission commands:
+find /var/www/rexwolf.info -type d -exec chmod 755 {} \;
+find /var/www/rexwolf.info -type f -exec chmod 644 {} \;
+chmod 775 /var/www
+
