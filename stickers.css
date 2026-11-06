@@ -314,3 +314,7 @@ body.sticker-lightbox-open {
     gap: 3px;
   }
 }
+
+/* Shared credits: Sticker page */
+.sticker-intro a { color: var(--orange2, #ffad32); font-weight: 800; text-underline-offset: 3px; }
+.sticker-intro a:hover { color: var(--paper, #fffaf2); }
