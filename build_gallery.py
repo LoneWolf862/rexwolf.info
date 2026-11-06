@@ -1,192 +1,144 @@
 #!/usr/bin/env python3
-"""Build the RexWolf gallery from images dropped into gallery-source/."""
+"""Build RexWolf artwork gallery; use --metadata-only to update credits without re-encoding images."""
 from __future__ import annotations
 
+import argparse
 from datetime import datetime, timezone
 import json
+from pathlib import Path
 import re
 import shutil
-from pathlib import Path
 
 try:
     from PIL import Image, ImageOps
 except ImportError:
-    print("Pillow is required. On Debian run: apt install python3-pil")
-    raise SystemExit(1)
-
+    Image = ImageOps = None
 
 ROOT = Path(__file__).resolve().parent
-GALLERY_HTML = ROOT / "gallery.html"
-SOURCE = ROOT / "gallery-source"
-THUMBS = ROOT / "assets" / "images" / "thumbs" / "gallery"
-FULL = ROOT / "assets" / "images" / "full" / "gallery"
-DATA = ROOT / "gallery-data.js"
-INFO = ROOT / "gallery-info.json"
-
-SUPPORTED = {
-    ".jpg",
-    ".jpeg",
-    ".png",
-    ".webp",
-    ".gif",
-    ".bmp",
-    ".tif",
-    ".tiff",
-}
+HTML = ROOT / 'gallery.html'
+SOURCE = ROOT / 'gallery-source'
+THUMBS = ROOT / 'assets/images/thumbs/gallery'
+FULL = ROOT / 'assets/images/full/gallery'
+DATA = ROOT / 'gallery-data.js'
+INFO = ROOT / 'gallery-info.json'
+ARTISTS = ROOT / 'artists.json'
+SUPPORTED = {'.jpg', '.jpeg', '.png', '.webp', '.gif', '.bmp', '.tif', '.tiff'}
 
 
 def slugify(value: str) -> str:
-    value = value.lower().strip()
-    value = re.sub(r"[^a-z0-9]+", "-", value).strip("-")
-    return value or "image"
+    return re.sub(r'[^a-z0-9]+', '-', value.lower().strip()).strip('-') or 'image'
 
 
 def pretty_title(stem: str) -> str:
-    stem = re.sub(r"^\d+[. _-]*", "", stem)
-    stem = re.sub(r"[_-]+", " ", stem)
-    stem = re.sub(r"\s+", " ", stem).strip()
-    return stem.title() or "Untitled"
+    stem = re.sub(r'^\d+[. _-]*', '', stem)
+    return re.sub(r'\s+', ' ', re.sub(r'[_-]+', ' ', stem)).strip().title() or 'Untitled'
 
 
 def relative_web(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
 
 
-def fit_and_save(
-    source: Path,
-    destination: Path,
-    max_size: tuple[int, int],
-    quality: int,
-) -> tuple[int, int]:
+def save_webp(source: Path, dest: Path, bounds: tuple[int, int], quality: int) -> tuple[int, int]:
     with Image.open(source) as opened:
-        image = ImageOps.exif_transpose(opened)
-
-        if getattr(image, "is_animated", False):
-            image.seek(0)
-
-        if image.mode not in ("RGB", "RGBA"):
-            image = image.convert(
-                "RGBA" if "transparency" in image.info else "RGB"
-            )
-
-        image.thumbnail(max_size, Image.Resampling.LANCZOS)
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        image.save(destination, "WEBP", quality=quality, method=4)
-
-        return image.size
+        im = ImageOps.exif_transpose(opened)
+        if getattr(im, 'is_animated', False):
+            im.seek(0)
+        if im.mode not in ('RGB', 'RGBA'):
+            im = im.convert('RGBA' if 'transparency' in im.info else 'RGB')
+        im.thumbnail(bounds, Image.Resampling.LANCZOS)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        im.save(dest, 'WEBP', quality=quality, method=4)
+        return im.size
 
 
-def update_cache_version() -> str:
-    version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
-    html = GALLERY_HTML.read_text(encoding="utf-8")
+def existing_items() -> dict[str, dict]:
+    if not DATA.exists():
+        return {}
+    raw = DATA.read_text('utf-8')
+    match = re.search(r'window\.GALLERY_IMAGES\s*=\s*(\[.*\])\s*;', raw, re.S)
+    if not match:
+        raise SystemExit('Cannot parse gallery-data.js; run a full build instead.')
+    return {item['downloadName']: item for item in json.loads(match.group(1))}
 
-    html = re.sub(
-        r'<script src="gallery-data\.js(?:\?v=[^"]*)?"></script>',
-        f'<script src="gallery-data.js?v={version}"></script>',
-        html,
-    )
 
-    html = re.sub(
-        r'<script src="gallery\.js(?:\?v=[^"]*)?"></script>',
-        f'<script src="gallery.js?v={version}"></script>',
-        html,
-    )
-
-    GALLERY_HTML.write_text(html, encoding="utf-8")
-    return version
+def update_cache_version() -> None:
+    version = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')
+    html = HTML.read_text('utf-8')
+    for filename in ('gallery-data.js', 'gallery.js'):
+        html = re.sub(
+            rf'(<script src="{re.escape(filename)})(?:\?v=[^\"]*)?(\"></script>)',
+            lambda m: f'{m.group(1)}?v={version}{m.group(2)}', html)
+    HTML.write_text(html, 'utf-8')
 
 
 def main() -> int:
-    SOURCE.mkdir(exist_ok=True)
-
-    metadata = (
-        json.loads(INFO.read_text(encoding="utf-8"))
-        if INFO.exists()
-        else {}
-    )
-
-    files = sorted(
-        (
-            path
-            for path in SOURCE.rglob("*")
-            if path.is_file() and path.suffix.lower() in SUPPORTED
-        ),
-        key=lambda path: path.relative_to(SOURCE).as_posix().lower(),
-    )
-
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--metadata-only', action='store_true', help='Update artists, URLs, captions and data without processing images')
+    args = parser.parse_args()
+    if not args.metadata_only and Image is None:
+        raise SystemExit('Pillow required for full builds: python3 -m pip install Pillow')
+    metadata = json.loads(INFO.read_text('utf-8')) if INFO.exists() else {}
+    artists = json.loads(ARTISTS.read_text('utf-8')) if ARTISTS.exists() else {}
+    files = sorted((p for p in SOURCE.rglob('*') if p.is_file() and p.suffix.lower() in SUPPORTED),
+                   key=lambda p: p.relative_to(SOURCE).as_posix().lower())
     if not files:
-        print(f"No supported images found in {SOURCE}")
-        return 1
-
-    shutil.rmtree(THUMBS, ignore_errors=True)
-    shutil.rmtree(FULL, ignore_errors=True)
-
-    THUMBS.mkdir(parents=True, exist_ok=True)
-    FULL.mkdir(parents=True, exist_ok=True)
+        raise SystemExit(f'No source artwork found under {SOURCE}')
+    prior = existing_items() if args.metadata_only else {}
+    if args.metadata_only:
+        missing = [p.name for p in files if p.name not in prior]
+        if missing:
+            raise SystemExit(f'{len(missing)} source image(s) have no generated entries; use python3 build_gallery.py to process them. Example: {missing[0]}')
+    else:
+        shutil.rmtree(THUMBS, ignore_errors=True)
+        shutil.rmtree(FULL, ignore_errors=True)
+        THUMBS.mkdir(parents=True, exist_ok=True)
+        FULL.mkdir(parents=True, exist_ok=True)
 
     used: set[str] = set()
-    items: list[dict[str, object]] = []
-
-    for number, source in enumerate(files, 1):
-        rel = source.relative_to(SOURCE)
-        key = rel.as_posix()
-        details = metadata.get(key, metadata.get(source.name, {}))
-
-        title = details.get("title") or pretty_title(source.stem)
-        caption = details.get("caption") or ""
-        category = details.get("category") or (
-            rel.parent.name if rel.parent != Path(".") else "Gallery"
-        )
-
-        slug = slugify(source.stem)
-        base = slug
-        counter = 2
-
-        while slug in used:
-            slug = f"{base}-{counter}"
-            counter += 1
-
-        used.add(slug)
-
-        thumb_path = THUMBS / f"{slug}.webp"
-        full_path = FULL / f"{slug}.webp"
-
-        fit_and_save(source, thumb_path, (640, 640), 82)
-        full_size = fit_and_save(source, full_path, (2200, 2200), 88)
-
-        items.append(
-            {
-                "title": title,
-                "caption": caption,
-                "category": category,
-                "thumb": relative_web(thumb_path),
-                "src": relative_web(full_path),
-                "downloadName": source.name,
-                "width": full_size[0],
-                "height": full_size[1],
-            }
-        )
-
-        print(
-            f"[{number}/{len(files)}] "
-            f"{key} -> {slug}.webp "
-            f"({full_size[0]}×{full_size[1]})"
-        )
-
-    DATA.write_text(
-        "// Generated by build_gallery.py. Do not edit by hand.\n"
-        "window.GALLERY_IMAGES = "
-        + json.dumps(items, ensure_ascii=False, indent=2)
-        + ";\n",
-        encoding="utf-8",
-    )
-
-    version = update_cache_version()
-
-    print(f"\nGallery updated: {len(items)} images")
-    print(f"Cache version updated: {version}")
+    items: list[dict] = []
+    for num, src in enumerate(files, 1):
+        rel = src.relative_to(SOURCE)
+        details = metadata.get(rel.as_posix(), metadata.get(src.name, {}))
+        artist_key = details.get('artist')
+        artist = artists.get(artist_key, {}) if artist_key else {}
+        if artist_key and not artist:
+            raise SystemExit(f'Artist ID {artist_key!r} for {src.name} not found in artists.json')
+        caption = details.get('caption', '')
+        credit_prefix = details.get('creditPrefix', 'Art by')
+        if artist:
+            # Keep any additional caption notes only; the artist credit is rendered separately.
+            credit_caption = f"{credit_prefix} {artist['name']}."
+            if not caption or re.fullmatch(r'(?:Art|Badge|Commissioned) by .+?\.?', caption.strip(), re.I):
+                caption = credit_caption
+        if args.metadata_only:
+            item = dict(prior[src.name])
+        else:
+            base = slugify(src.stem)
+            slug = base
+            counter = 2
+            while slug in used:
+                slug = f'{base}-{counter}'
+                counter += 1
+            used.add(slug)
+            thumb, full = THUMBS / f'{slug}.webp', FULL / f'{slug}.webp'
+            save_webp(src, thumb, (640, 640), 82)
+            w, h = save_webp(src, full, (2200, 2200), 88)
+            item = {'thumb': relative_web(thumb), 'src': relative_web(full),
+                    'downloadName': src.name, 'width': w, 'height': h}
+        item.update({'title': details.get('title') or pretty_title(src.stem),
+                     'caption': caption,
+                     'category': details.get('category') or (rel.parent.name if rel.parent != Path('.') else 'Gallery'),
+                     'artist': artist.get('name', ''),
+                     'artistUrl': artist.get('url', ''),
+                     'creditPrefix': credit_prefix if artist else ''})
+        items.append(item)
+        print(f'[{num}/{len(files)}] {"metadata" if args.metadata_only else "built"} {rel}')
+    DATA.write_text('// Generated by build_gallery.py. Do not edit by hand.\n'
+                    'window.GALLERY_IMAGES = ' + json.dumps(items, ensure_ascii=False, indent=2) + ';\n', 'utf-8')
+    update_cache_version()
+    print(f'Gallery updated: {len(items)} images; {"no images reprocessed" if args.metadata_only else "images regenerated"}.')
     return 0
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     raise SystemExit(main())

@@ -8,7 +8,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/000-wolf-main-refsheet.webp",
     "downloadName": "000.Wolf_Main_Refsheet.PNG",
     "width": 2200,
-    "height": 1467
+    "height": 1467,
+    "artist": "",
+    "artistUrl": "",
+    "creditPrefix": ""
   },
   {
     "title": "Original Reference Sheet",
@@ -18,7 +21,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/001-old-wolfrefsheet.webp",
     "downloadName": "001.old_wolfrefsheet.png",
     "width": 2200,
-    "height": 1320
+    "height": 1320,
+    "artist": "",
+    "artistUrl": "",
+    "creditPrefix": ""
   },
   {
     "title": "Portrait",
@@ -28,7 +34,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/002-rex-portrait.webp",
     "downloadName": "002.Rex_Portrait.png",
     "width": 2000,
-    "height": 2000
+    "height": 2000,
+    "artist": "Garauwu",
+    "artistUrl": "https://guara.carrd.co/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Portrait W/O Glasses",
@@ -38,7 +47,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/003-rex-portrait-noglasses.webp",
     "downloadName": "003.Rex_Portrait_noglasses.png",
     "width": 2000,
-    "height": 2000
+    "height": 2000,
+    "artist": "Garauwu",
+    "artistUrl": "https://guara.carrd.co/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Spotify Poster",
@@ -48,17 +60,23 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/004-spotify-poster.webp",
     "downloadName": "004.Spotify_Poster.jpg",
     "width": 2048,
-    "height": 2048
+    "height": 2048,
+    "artist": "Hal0",
+    "artistUrl": "https://linktr.ee/_halo_",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Wolf Portrait",
-    "caption": "Art by Star Sprit Wolf.",
+    "caption": "Art by Star Spirit Wolf.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/005-spritstar-portrait.webp",
     "src": "assets/images/full/gallery/005-spritstar-portrait.webp",
     "downloadName": "005.spritstar_portrait.JPG",
     "width": 1536,
-    "height": 2048
+    "height": 2048,
+    "artist": "Star Spirit Wolf",
+    "artistUrl": "https://starspiritwolf.carrd.co/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Grin",
@@ -68,7 +86,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/006-halo-portrait.webp",
     "downloadName": "006.Halo_portrait.JPG",
     "width": 2200,
-    "height": 2200
+    "height": 2200,
+    "artist": "Hal0",
+    "artistUrl": "https://linktr.ee/_halo_",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Gift Art",
@@ -78,17 +99,23 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/007-chudraw-portrait.webp",
     "downloadName": "007.chudraw_portrait.png",
     "width": 1080,
-    "height": 1920
+    "height": 1920,
+    "artist": "Chudraw",
+    "artistUrl": "https://linktr.ee/Chudraw",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Wolf Doodle",
-    "caption": "Art by HareThere",
+    "caption": "Art by HareThere.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/008-harethere-portrait.webp",
     "src": "assets/images/full/gallery/008-harethere-portrait.webp",
     "downloadName": "008.Harethere_portrait.png",
     "width": 1000,
-    "height": 1000
+    "height": 1000,
+    "artist": "HareThere",
+    "artistUrl": "https://www.tumblr.com/harethere-is-art",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Cube Break",
@@ -98,7 +125,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/009-rubics-cube.webp",
     "downloadName": "009.Rubics_cube.png",
     "width": 2048,
-    "height": 2048
+    "height": 2048,
+    "artist": "Hal0",
+    "artistUrl": "https://linktr.ee/_halo_",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Badge",
@@ -108,7 +138,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/010-shep-badge.webp",
     "downloadName": "010.shep_badge.jpg",
     "width": 849,
-    "height": 1298
+    "height": 1298,
+    "artist": "Shep",
+    "artistUrl": "https://x.com/ShepGoesBlep",
+    "creditPrefix": "Badge by"
   },
   {
     "title": "Ski Boi",
@@ -118,17 +151,23 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/011-ski-boi.webp",
     "downloadName": "011.Ski-Boi.png",
     "width": 2200,
-    "height": 2200
+    "height": 2200,
+    "artist": "ArcaneVixen",
+    "artistUrl": "https://x.com/ArcaneVixen_Art",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Woof Hat",
-    "caption": "Art by Hal0",
+    "caption": "Art by Hal0.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/012-woof-hat.webp",
     "src": "assets/images/full/gallery/012-woof-hat.webp",
     "downloadName": "012.Woof_hat.jpg",
     "width": 2200,
-    "height": 2200
+    "height": 2200,
+    "artist": "Hal0",
+    "artistUrl": "https://linktr.ee/_halo_",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Chillin",
@@ -138,7 +177,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/013-rockandroll.webp",
     "downloadName": "013.RockandRoll.PNG",
     "width": 1325,
-    "height": 2200
+    "height": 2200,
+    "artist": "Garauwu",
+    "artistUrl": "https://guara.carrd.co/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Aditional Refrance details",
@@ -148,7 +190,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/014-aditional-referanece-art.webp",
     "downloadName": "014.aditional_Referanece_art.png",
     "width": 1941,
-    "height": 2200
+    "height": 2200,
+    "artist": "NattyKool",
+    "artistUrl": "https://nattykool.carrd.co/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Arcade Night",
@@ -158,37 +203,49 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/015-wolfs-arcade.webp",
     "downloadName": "015.Wolfs_Arcade.png",
     "width": 2048,
-    "height": 1471
+    "height": 1471,
+    "artist": "Garauwu",
+    "artistUrl": "https://guara.carrd.co/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Pointing Meme (Bike)",
-    "caption": "Art by Halo.",
+    "caption": "Art by Hal0.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/016-point-meme-bike.webp",
     "src": "assets/images/full/gallery/016-point-meme-bike.webp",
     "downloadName": "016.point_meme_bike.png",
     "width": 2200,
-    "height": 2200
+    "height": 2200,
+    "artist": "Hal0",
+    "artistUrl": "https://linktr.ee/_halo_",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Peek",
-    "caption": "Art by ColorBass.",
+    "caption": "Art by Stitches.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/017-peek.webp",
     "src": "assets/images/full/gallery/017-peek.webp",
     "downloadName": "017.peek.PNG",
     "width": 1825,
-    "height": 1450
+    "height": 1450,
+    "artist": "Stitches",
+    "artistUrl": "https://www.instagram.com/stitches.coloring.book/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Pets",
-    "caption": "Art by Titan Animation.",
+    "caption": "Art by Titan.Animation.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/018-petting.webp",
     "src": "assets/images/full/gallery/018-petting.webp",
     "downloadName": "018.Petting.gif",
     "width": 512,
-    "height": 512
+    "height": 512,
+    "artist": "Titan.Animation",
+    "artistUrl": "https://linktr.ee/Atitananimation",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Commission Gift",
@@ -198,7 +255,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/019-yoink-gift.webp",
     "downloadName": "019.yoink_gift.png",
     "width": 1000,
-    "height": 1000
+    "height": 1000,
+    "artist": "Tracker",
+    "artistUrl": "",
+    "creditPrefix": "Commissioned by"
   },
   {
     "title": "Long Hours",
@@ -208,7 +268,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/020-long-hours.webp",
     "downloadName": "020.long_hours.png",
     "width": 1320,
-    "height": 2200
+    "height": 2200,
+    "artist": "Sumrek",
+    "artistUrl": "https://www.youtube.com/@Sumerechnyy",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Long Hours (unshaded)",
@@ -218,17 +281,23 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/021-long-hours-unshaded.webp",
     "downloadName": "021.long_hours_unshaded.png",
     "width": 1320,
-    "height": 2200
+    "height": 2200,
+    "artist": "Sumrek",
+    "artistUrl": "https://www.youtube.com/@Sumerechnyy",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Woof",
-    "caption": "Art by Raven",
+    "caption": "Art by Raven.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/022-woof.webp",
     "src": "assets/images/full/gallery/022-woof.webp",
     "downloadName": "022.Woof.png",
     "width": 1139,
-    "height": 1301
+    "height": 1301,
+    "artist": "Raven",
+    "artistUrl": "https://www.instagram.com/rave_n1800/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Late night vibes",
@@ -238,7 +307,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/023-late-night-vibes.webp",
     "downloadName": "023.Late_night_vibes.png",
     "width": 2200,
-    "height": 1862
+    "height": 1862,
+    "artist": "F3ath3rDraws",
+    "artistUrl": "https://kandifeather14.carrd.co/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Gift Art",
@@ -248,17 +320,23 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/024-cinderdraco-portrait-gift.webp",
     "downloadName": "024.Cinderdraco_portrait_gift.png",
     "width": 576,
-    "height": 792
+    "height": 792,
+    "artist": "Cinderdraco",
+    "artistUrl": "https://www.instagram.com/ibisinthewoods/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Chilling",
-    "caption": "Art by St!tchez.",
+    "caption": "Art by Stitches.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/025-chilling.webp",
     "src": "assets/images/full/gallery/025-chilling.webp",
     "downloadName": "025.Chilling.png",
     "width": 1620,
-    "height": 2160
+    "height": 2160,
+    "artist": "Stitches",
+    "artistUrl": "https://www.instagram.com/stitches.coloring.book/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Gift Art",
@@ -268,7 +346,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/026-gift-art-coffekittenst.webp",
     "downloadName": "026.Gift_art_CoffeKittenst.png",
     "width": 2048,
-    "height": 2048
+    "height": 2048,
+    "artist": "CoffeKittenst",
+    "artistUrl": "https://www.instagram.com/coffeykitten_21/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Character Sketch",
@@ -278,7 +359,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/027-character-scetch.webp",
     "downloadName": "027.Character_Scetch.jpg",
     "width": 1000,
-    "height": 1000
+    "height": 1000,
+    "artist": "Mango Bunny",
+    "artistUrl": "https://www.instagram.com/mango_bunnyy/",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Wolf Scetch",
@@ -288,7 +372,10 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/028-wolf-sketch.webp",
     "downloadName": "028.Wolf_Sketch.png",
     "width": 1500,
-    "height": 1500
+    "height": 1500,
+    "artist": "SunSur0",
+    "artistUrl": "https://linktr.ee/sunsur0",
+    "creditPrefix": "Art by"
   },
   {
     "title": "Wolf Feral",
@@ -298,6 +385,9 @@ window.GALLERY_IMAGES = [
     "src": "assets/images/full/gallery/029-wolf-ferral.webp",
     "downloadName": "029.Wolf_Ferral.png",
     "width": 2200,
-    "height": 1529
+    "height": 1529,
+    "artist": "Felix Cartoons",
+    "artistUrl": "https://www.instagram.com/felixcartoons/",
+    "creditPrefix": "Art by"
   }
 ];

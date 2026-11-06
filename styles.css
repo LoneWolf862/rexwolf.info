@@ -90,3 +90,17 @@ linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90de
 .artist-note p:last-child,.artist-note ul:last-child{margin-bottom:0}
 .artist-shorthand{margin:24px 0;padding:14px 18px;text-align:center;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);border-radius:14px;font-weight:900;color:var(--paper)}
 @media(max-width:560px){.artist-shell{padding-top:24px}.artist-actions{margin-top:22px}.terms-btn{width:100%}.refsheet-wrap{padding:7px;margin-bottom:28px}.artist-copy{font-size:.96rem;line-height:1.66}.artist-copy h2{font-size:1.4rem}.artist-note{padding:16px}}
+
+/* Artwork artist credits — artist-gallery.css */
+/* Artwork cards: the image button and artist link are separate accessible controls. */
+.gallery-card { display:flex; flex-direction:column; }
+.gallery-card-open { width:100%; padding:0; border:0; background:none; color:inherit; text-align:left; cursor:pointer; font:inherit; }
+.gallery-card-open img { display:block; width:100%; }
+.gallery-card-open strong { display:block; padding:13px 14px 3px; font-size:1rem; }
+.gallery-card .gallery-card-credit { display:block; padding:0 14px 15px; margin-top:3px; font-size:.8rem; color:var(--muted); }
+.gallery-card:focus-within { border-color:var(--orange); }
+.artist-link { color:var(--orange2); font-weight:800; text-decoration:underline; text-underline-offset:2px; }
+.artist-link:hover, .artist-link:focus-visible { color:var(--paper); }
+.gallery-card-open:focus-visible { outline:2px solid var(--orange); outline-offset:-2px; }
+@media(max-width:560px){ .gallery-card-open strong { padding:10px 10px 2px; } .gallery-card .gallery-card .gallery-card-credit { padding:0 10px 10px; font-size:.69rem; } }
+
