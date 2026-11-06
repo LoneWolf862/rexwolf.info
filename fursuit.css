@@ -2,7 +2,7 @@
 /* Inherits the existing RexWolf palette and background */
 
 .wild-shell {
-    width: min(1500px, calc(100% - 28px));
+    width: min(1800px, calc(100% - 24px));
     margin: auto;
     padding: 34px 0 70px;
     position: relative;
@@ -73,7 +73,6 @@
 }
 /* Responsive masonry: each photo keeps its natural aspect ratio.
    CSS multi-columns create the staggered, tightly packed photo-wall look. */
-.wild-shell{width:min(1800px,calc(100% - 24px))}
 .wild-grid{column-count:8;column-gap:7px}
 .wild-card{display:block;width:100%;height:auto;position:relative;break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 7px;padding:0;border:1px solid rgba(255,255,255,.13);border-radius:7px;overflow:hidden;background:#202329;color:var(--paper);cursor:pointer;box-shadow:none;transition:border-color .17s ease,filter .17s ease}
 .wild-card:hover,.wild-card:focus-visible{border-color:var(--orange);filter:brightness(1.08);outline:2px solid var(--orange);outline-offset:-2px}
