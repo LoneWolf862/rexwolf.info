@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f28c00">
+  <meta name="description" content="Wolf in the Wild — Rex Wolf's fursuit photo gallery.">
+  <title>Doxed — Wolf in the Wild | Rex Wolf</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fursuit.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="wild-shell">
+    <header class="wild-header">
+      <a class="back-link" href="index.html">← Back home</a>
+      <p class="wild-eyebrow">Fursuit photo collection</p>
+      <h1>Doxed — Wolf in the Wild</h1>
+      <p>
+        Real-life sightings of a certain wolf. Click any photo to browse, swipe, or download.
+        My amazing suit was made by
+        <a href="https://www.deleonfursuits.com/" target="_blank" rel="noopener noreferrer">DeLeon Fursuits</a>,
+        and most images are taken by my resident photographer
+        <a href="https://otterontheinter.net/" target="_blank" rel="noopener noreferrer">Trace Otter</a>.
+      </p>
+      <p class="wild-count" id="wild-count" aria-live="polite"></p>
+    </header>
+    <section id="wild-grid" class="wild-grid" aria-label="Fursuit photo gallery"></section>
+    <p id="wild-empty" class="wild-empty" hidden>No photos yet. Check back for more wolf sightings!</p>
+  </main>
+  <div id="wild-lightbox" class="lightbox wild-lightbox" role="dialog" aria-modal="true" aria-label="Fursuit photo viewer" aria-hidden="true">
+    <div class="lightbox-panel">
+      <header class="lightbox-head">
+        <div class="wild-image-details"><h2 id="wild-title"></h2><p id="wild-caption"></p></div>
+        <div class="lightbox-actions"><a id="wild-download" class="download-btn" download>Download</a><button class="close-btn" type="button" aria-label="Close photo viewer">×</button></div>
+      </header>
+      <div class="lightbox-stage"><button class="nav-btn prev" type="button" aria-label="Previous photo">‹</button><img id="wild-image" alt=""><button class="nav-btn next" type="button" aria-label="Next photo">›</button></div>
+      <div class="lightbox-counter" id="wild-counter"></div>
+    </div>
+  </div>
+  <script src="fursuit-data.js?v=20261105070651"></script>
+  <script src="fursuit.js?v=20261105070651"></script>
+</body>
+</html>

@@ -14,3 +14,14 @@ desktop.ini
 *.tar
 *.tar.gz
 *.bak
+
+# Wolf in the Wild gallery
+assets/images/thumbs/fursuit/
+assets/images/full/fursuit/
+assets/images/downloads/fursuit/
+fursuit-build-cache.json
+
+# Python
+__pycache__/
+*.pyc
+fursuit-source/

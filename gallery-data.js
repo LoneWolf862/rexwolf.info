@@ -231,7 +231,7 @@ window.GALLERY_IMAGES = [
     "height": 1301
   },
   {
-    "title": "Late night vibes ",
+    "title": "Late night vibes",
     "caption": "Art by F3ath3rDraws.",
     "category": "Gallery",
     "thumb": "assets/images/thumbs/gallery/023-late-night-vibes.webp",
@@ -239,5 +239,65 @@ window.GALLERY_IMAGES = [
     "downloadName": "023.Late_night_vibes.png",
     "width": 2200,
     "height": 1862
+  },
+  {
+    "title": "Gift Art",
+    "caption": "Art by Cinderdraco.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/024-cinderdraco-portrait-gift.webp",
+    "src": "assets/images/full/gallery/024-cinderdraco-portrait-gift.webp",
+    "downloadName": "024.Cinderdraco_portrait_gift.png",
+    "width": 576,
+    "height": 792
+  },
+  {
+    "title": "Chilling",
+    "caption": "Art by St!tchez.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/025-chilling.webp",
+    "src": "assets/images/full/gallery/025-chilling.webp",
+    "downloadName": "025.Chilling.png",
+    "width": 1620,
+    "height": 2160
+  },
+  {
+    "title": "Gift Art",
+    "caption": "Art by CoffeKittenst.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/026-gift-art-coffekittenst.webp",
+    "src": "assets/images/full/gallery/026-gift-art-coffekittenst.webp",
+    "downloadName": "026.Gift_art_CoffeKittenst.png",
+    "width": 2048,
+    "height": 2048
+  },
+  {
+    "title": "Character Sketch",
+    "caption": "Art by Mango Bunny.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/027-character-scetch.webp",
+    "src": "assets/images/full/gallery/027-character-scetch.webp",
+    "downloadName": "027.Character_Scetch.jpg",
+    "width": 1000,
+    "height": 1000
+  },
+  {
+    "title": "Wolf Scetch",
+    "caption": "Art by SunSur0.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/028-wolf-sketch.webp",
+    "src": "assets/images/full/gallery/028-wolf-sketch.webp",
+    "downloadName": "028.Wolf_Sketch.png",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "title": "Wolf Feral",
+    "caption": "Art by Felix Cartoons.",
+    "category": "Gallery",
+    "thumb": "assets/images/thumbs/gallery/029-wolf-ferral.webp",
+    "src": "assets/images/full/gallery/029-wolf-ferral.webp",
+    "downloadName": "029.Wolf_Ferral.png",
+    "width": 2200,
+    "height": 1529
   }
 ];

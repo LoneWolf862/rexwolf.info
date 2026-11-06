@@ -100,6 +100,17 @@ window.STICKER_IMAGES = [
     "height": 512
   },
   {
+    "title": "Bleeeeh",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/bleeeeh.webp",
+    "src": "assets/images/full/stickers/bleeeeh.webp",
+    "download": "sticker-source/Bleeeeh.png",
+    "downloadName": "Bleeeeh.png",
+    "width": 1024,
+    "height": 1024
+  },
+  {
     "title": "Boop",
     "caption": "",
     "category": "Sticker",
@@ -210,6 +221,17 @@ window.STICKER_IMAGES = [
     "height": 512
   },
   {
+    "title": "Dizzy",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/dizzy.webp",
+    "src": "assets/images/full/stickers/dizzy.webp",
+    "download": "sticker-source/Dizzy.png",
+    "downloadName": "Dizzy.png",
+    "width": 512,
+    "height": 512
+  },
+  {
     "title": "Dot Dot Dot",
     "caption": "",
     "category": "Sticker",
@@ -285,6 +307,17 @@ window.STICKER_IMAGES = [
     "downloadName": "Embaresed_3.png",
     "width": 512,
     "height": 512
+  },
+  {
+    "title": "Eyebrow Raise",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/eyebrow-raise.webp",
+    "src": "assets/images/full/stickers/eyebrow-raise.webp",
+    "download": "sticker-source/Eyebrow_raise.png",
+    "downloadName": "Eyebrow_raise.png",
+    "width": 1024,
+    "height": 1024
   },
   {
     "title": "Eyeroll",
@@ -639,6 +672,50 @@ window.STICKER_IMAGES = [
     "height": 512
   },
   {
+    "title": "Laugh 2",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/laugh-2.webp",
+    "src": "assets/images/full/stickers/laugh-2.webp",
+    "download": "sticker-source/Laugh_2.png",
+    "downloadName": "Laugh_2.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Lonewolf Autism",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/lonewolf-autism.webp",
+    "src": "assets/images/full/stickers/lonewolf-autism.webp",
+    "download": "sticker-source/LoneWolf_Autism.png",
+    "downloadName": "LoneWolf_Autism.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Lonewolf Bk",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/lonewolf-bk.webp",
+    "src": "assets/images/full/stickers/lonewolf-bk.webp",
+    "download": "sticker-source/LoneWolf_BK.png",
+    "downloadName": "LoneWolf_BK.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Morning",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/morning.webp",
+    "src": "assets/images/full/stickers/morning.webp",
+    "download": "sticker-source/Morning.png",
+    "downloadName": "Morning.png",
+    "width": 512,
+    "height": 512
+  },
+  {
     "title": "Music",
     "caption": "",
     "category": "Sticker",
@@ -705,6 +782,28 @@ window.STICKER_IMAGES = [
     "height": 512
   },
   {
+    "title": "Nope",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/nope.webp",
+    "src": "assets/images/full/stickers/nope.webp",
+    "download": "sticker-source/Nope.png",
+    "downloadName": "Nope.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Notes",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/notes.webp",
+    "src": "assets/images/full/stickers/notes.webp",
+    "download": "sticker-source/Notes.png",
+    "downloadName": "Notes.png",
+    "width": 512,
+    "height": 512
+  },
+  {
     "title": "Nou",
     "caption": "",
     "category": "Sticker",
@@ -727,6 +826,17 @@ window.STICKER_IMAGES = [
     "height": 512
   },
   {
+    "title": "Nuh Uh",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/nuh-uh.webp",
+    "src": "assets/images/full/stickers/nuh-uh.webp",
+    "download": "sticker-source/Nuh-uh.png",
+    "downloadName": "Nuh-uh.png",
+    "width": 512,
+    "height": 512
+  },
+  {
     "title": "Nuzzle",
     "caption": "",
     "category": "Sticker",
@@ -745,6 +855,17 @@ window.STICKER_IMAGES = [
     "src": "assets/images/full/stickers/ooopse.webp",
     "download": "sticker-source/Ooopse.png",
     "downloadName": "Ooopse.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Ooopse 2",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/ooopse-2.webp",
+    "src": "assets/images/full/stickers/ooopse-2.webp",
+    "download": "sticker-source/Ooopse_2.png",
+    "downloadName": "Ooopse_2.png",
     "width": 512,
     "height": 512
   },
@@ -804,6 +925,61 @@ window.STICKER_IMAGES = [
     "height": 512
   },
   {
+    "title": "Pets 3",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/pets-3.webp",
+    "src": "assets/images/full/stickers/pets-3.webp",
+    "download": "sticker-source/Pets_3.png",
+    "downloadName": "Pets_3.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Phone Disterbed",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/phone-disterbed.webp",
+    "src": "assets/images/full/stickers/phone-disterbed.webp",
+    "download": "sticker-source/Phone_Disterbed.png",
+    "downloadName": "Phone_Disterbed.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Phone Really",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/phone-really.webp",
+    "src": "assets/images/full/stickers/phone-really.webp",
+    "download": "sticker-source/Phone_Really.png",
+    "downloadName": "Phone_Really.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Phone Shock",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/phone-shock.webp",
+    "src": "assets/images/full/stickers/phone-shock.webp",
+    "download": "sticker-source/Phone_Shock.png",
+    "downloadName": "Phone_Shock.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Phone Trired",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/phone-trired.webp",
+    "src": "assets/images/full/stickers/phone-trired.webp",
+    "download": "sticker-source/Phone_Trired.png",
+    "downloadName": "Phone_Trired.png",
+    "width": 512,
+    "height": 512
+  },
+  {
     "title": "Play",
     "caption": "",
     "category": "Sticker",
@@ -811,6 +987,17 @@ window.STICKER_IMAGES = [
     "src": "assets/images/full/stickers/play.webp",
     "download": "sticker-source/Play.png",
     "downloadName": "Play.png",
+    "width": 512,
+    "height": 512
+  },
+  {
+    "title": "Point",
+    "caption": "",
+    "category": "Sticker",
+    "thumb": "assets/images/thumbs/stickers/point.webp",
+    "src": "assets/images/full/stickers/point.webp",
+    "download": "sticker-source/Point.png",
+    "downloadName": "Point.png",
     "width": 512,
     "height": 512
   },
